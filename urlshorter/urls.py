@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from shortener.yasg import urlpatterns as docpath
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include("allauth.urls")),
     path('', include('shortener.urls'))
 ]
+
+urlpatterns += docpath

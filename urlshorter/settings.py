@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'rest_framework',
-    'django_bootstrap5'
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -141,21 +141,11 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# SOCIALACCOUNT_PROVIDERS = {
-#     'github': {
-#         'APP': {
-#             'client_id': os.environ.get('GITHUB_CLIENT_ID'),
-#             'secret': os.environ.get('GITHUB_SECRET'),
-#             'key': os.environ.get('GITHUB_KEY')
-#         }
-#     }
-# }
-
 SITE_ID = 1
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-LOGIN_REDIRECT_URL = 'admin:index'
-LOGOUT_REDIRECT_URL = 'account_login'
-
-LOGIN_URL = 'account_login'
+# LOGIN_REDIRECT_URL = 'admin:index'
+# LOGOUT_REDIRECT_URL = 'account_login'
+#
+# LOGIN_URL = 'account_login'
