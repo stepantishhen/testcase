@@ -29,11 +29,18 @@
     ```bash
     docker-compose run web python manage.py createsuperuser
     ```
+6. После этого создайте токен для авторизации с помощью команды:
 
-6. После этого снова поднимите контейнеры:
+    ```bash
+    docker-compose run web python manage.py drf_create_token <username>
+    ```
+
+7. После этого снова поднимите контейнеры:
 
     ```bash
     docker-compose up
     ```
-
-7. Теперь вы можете зайти, используя созданные учетные данные, перейдя по ссылке [http://localhost:8000](http://localhost:8000). Введите логин и пароль созданного суперпользователя.
+   Авторизироваться можно через UI Swagger(кнопка Authorize) http://0.0.0.0:8000/swagger/ либо через Postman передав в Header:
+   ```Authorization: Token <сгенерированный_ранее_токен>```
+   
+   Чтобы запустить тесты: ```docker-compose run web python manage.py test```
